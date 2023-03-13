@@ -1,0 +1,29 @@
+<!-- The sidebar -->
+<div class="sidebar" id="side">
+  
+    <a class= {{jjj}} id="logi" routerLink="/home/settings/category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-boxes-stacked me-2" style="color: #073C7E;"></i>Add Industry</a>
+    <a (click)="vada()" id="logi" routerLink="/home/settings/location" routerLinkActive="active" [routerLinkActiveOptions]="{exact:false}"><i class="fa-solid fa-location-dot me-2" style="color: #073C7E;"></i>Location</a>
+    <!-- <a routerLink="/home/settings/employmenttype" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-file-circle-plus me-2" style="color: #073C7E;"></i>Employment Type</a> -->
+    <a routerLink="/home/settings/addsubscription" id="logi" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-money-bill-wheat me-2" style="color: #073C7E;"></i>Edit Subscription</a>
+    <button class="btn bg-transparent border-0 w-100 text-start" style="color: rgb(255, 0, 0);" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
+
+  </div>
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="fw-bolder">Are you sure want to logout?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="removeToken()" >Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <router-outlet></router-outlet>
+  <!-- Page content -->
+ 

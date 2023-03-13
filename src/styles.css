@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Poppins';height: fit-content;}
+
+#new{
+    color: #073C7E;
+}
+
+
+#bluetext{
+    color: #E6F0F9;
+}
+
+#blue{
+    background-color: #E6F0F9;
+}
+
+
+#darkblue{
+    background-color: #073C7E;
+}
+
+#darkbluetext{
+    color: #073C7E;
+}

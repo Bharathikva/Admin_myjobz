@@ -1,0 +1,24 @@
+
+
+/* #spin {
+    animation: rotate 8s infinite linear;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+
+
+  #image-container {
+    text-align: center;
+  }
+  
+  #image-container img {
+    display: inline-block;
+    margin: 0 auto;
+  }

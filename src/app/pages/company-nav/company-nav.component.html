@@ -1,0 +1,12 @@
+<!-- The sidebar -->
+<div class="sidebar" id="side">
+    <a class = {{hhi}} routerLink="/home/companiesnav/companyprofileinfo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-user me-2" style="color: #073C7E;"></i>Employer Info</a>
+    <!-- <a (click)="vada()" routerLink="/home/companiesnav/companydocument" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-money-bill-wheat me-2" style="color: #073C7E;"></i>Document</a> -->
+    <a (click)="vada()" routerLink="/home/companiesnav/companyjobs" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-file-circle-plus me-2" style="color: #073C7E;"></i>Posted Jobs</a>
+    <a href="#"  style="color: red;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash me-2"></i>Delete</a>
+  </div>
+  <app-delete></app-delete>
+  <router-outlet></router-outlet>
+  <!-- Page content -->
+ 
+  

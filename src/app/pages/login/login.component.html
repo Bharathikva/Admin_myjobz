@@ -1,0 +1,49 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div class="container">
+  <div class="row d-flex">
+    <div class="col-12 col-md-6" id="leo">
+      <div class="p-5">
+          <div class="p-5 rounded-3" id="blue">
+              <h2 class="text-center">Welcome To <span class="fw-bolder" id="darkbluetext">Myjobz</span> </h2>
+              <p class="text-center">Login via Phone Number and OTP</p>
+              <div>
+                   <form class="row g-3 needs-validation" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="col-12">
+                      <div class="form-floating mb-3"> 
+                      <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="text" formControlName="phone" maxlength="10" class="form-control w-100" id="floatingInput"  placeholder="000000000000" autocomplete="off">
+                      <label for="floatingInput">Phone Number</label>
+                      <span class="text-left text-danger" *ngIf="loginForm.controls['phone'].hasError('required') && loginForm.controls['phone'].touched" >
+                          phone number is required.
+                        </span>
+                        <div class="text-left text-danger" *ngIf="numberControl.errors?.['maxlength']">Maximum length is 10 digits</div>
+                        <div class="text-left text-danger" *ngIf="numberControl.errors?.['pattern']">Please enter only numbers</div>
+
+                        
+
+                     </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3"> 
+                    <input type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" formControlName="otp" maxlength="4" class="form-control w-100" id="floatingInput" placeholder="000000000000" autocomplete="off">
+                    <label for="floatingInput">OTP</label>
+                    <span class="text-danger" *ngIf="loginForm.controls['otp'].hasError('required') && loginForm.controls['otp'].touched" >
+                        OTP is required.
+                      </span>
+                   </div>
+                </div>
+                <div>
+                  <button class="btn text-white w-100" id="darkblue" type="submit"  [disabled]="loginForm.invalid" >Sign in</button>
+                </div>
+                   </form>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 align-self-center text-center d-none d-sm-block" > 
+
+      <img src="/assets\img\Round.gif" alt="" id="spin" width="80%">
+     
+    </div>
+  </div>
+</div>
+</div>

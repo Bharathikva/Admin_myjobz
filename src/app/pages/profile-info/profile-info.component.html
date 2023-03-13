@@ -1,0 +1,225 @@
+
+<div class="content">
+    <div class="row mt-2">
+       <div class="col-12">
+          <div class="row d-flex">
+            <div class="col-12 col-md-4">
+                <div class="p-3 rounded shadow-sm" id="blue">
+                    <div class="text-center p-3">
+                        <img src="/assets\img\profile.png" alt="" width="60%">
+                    </div>
+                    <div class="text-center">
+                        <h5 class="fw-bolder" style="color: #073C7E;">Sundarabharathi</h5>
+                        <p>Plumber</p>
+                        <div class="row justify-content-center d-flex">
+                            <div class="col" style="max-width: fit-content;">
+                                <div class="upload-btn-wrapper">
+                            <button class="btn" id="darkbluetext"><i class="fa-solid fa-upload me-2"></i>Upload Resume</button>
+                            <input type="file" name="myfile" />
+                          </div>
+                            </div>
+                            <div class="col" style="max-width: fit-content;">
+                                <div class="upload-btn-wrapper">
+                                    <button class="btn" id="darkbluetext"><i class="fa-solid fa-download"></i></button>
+                                  
+                                  </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+           
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="p-3 rounded shadow-sm">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col align-self-center">
+                           <span class="fs-6 fw-bolder">Basic Information</span> </div>
+                        <div class="col text-end">
+                            <span><a class="btn text-white" routerLink="/home/candidate/editprofile" style="background-color: #073C7E;">Edit Profile</a></span>
+                        </div>
+                    </div>
+                    <div class="row d-flex p-3 mt-3">
+                        <div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Experience <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-briefcase me-2"></i>4 Years</span>
+                            </div>
+                        </div><div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Location <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-location-dot me-2"></i>Chennai</span>
+                            </div>
+                        </div><div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Date Of Birth <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-calendar-days me-2"></i>20/06/2000</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row d-flex p-3 ">
+                        <div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Contact No <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-phone me-2"></i>6383711863</span>
+                            </div>
+                        </div><div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Occupation <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-person-digging me-2"></i>Plumber</span>
+                            </div>
+                        </div><div class="col-12 col-md-4">
+                            <div class="fs-6 fw-bolder">
+                                Industrial Preference <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i class="fa-solid fa-car me-2"></i>Auto Mobile</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="p-3 rounded shadow-sm mt-3">
+                   
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                           <span class="fs-6 fw-bolder">Education<span class="text-danger">*</span></span> </div>
+                        <div class="col text-end">
+                            <span><a class="btn" data-bs-toggle="modal" data-bs-target="#education">Add</a></span>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            <div>
+                                <span class="fs-5 fw-bolder" id="darkbluetext">Bachelor of Science <span class="fs-6 fw-normal">(2016-2019)</span> </span> <br>
+                                <p>PSNA College of Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded shadow-sm mt-3">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                           <span class="fs-6 fw-bolder">Experience<span class="text-danger">*</span></span> </div>
+                        <div class="col text-end">
+                            <span><a class="btn" data-bs-toggle="modal" data-bs-target="#experience">Add</a></span>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            <div>
+                                <span class="fs-5 fw-bolder" id="darkbluetext">TATA Motors <span class="fs-6 fw-normal">(2020-2021)</span> </span> <br>
+                                <p>Plumber and Maintatnce Work</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" >
+    Launch demo modal
+  </button>
+  
+  <!-- education Modal -->
+  <div class="modal fade" id="education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Education Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form class="row g-3 needs-validation">
+            <div class="col-12">
+                <div class="form-floating mb-3">
+                    <input type="text" formControlName="education" class="form-control" id="floatingInput"
+                        placeholder="education" autocomplete="off">
+                    <label for="floatingInput">Education</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating mb-3">
+                    <input type="text" formControlName="degree" class="form-control" id="floatingInput"
+                        placeholder="degree" autocomplete="off">
+                    <label for="floatingInput">Degree Name</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-floating mb-3">
+                    <input type="date" formControlName="degree" class="form-control" id="floatingInput"
+                        placeholder="degree" autocomplete="off">
+                    <label for="floatingInput">From date</label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-floating mb-3">
+                    <input type="date" formControlName="degree" class="form-control" id="floatingInput"
+                        placeholder="degree" autocomplete="off">
+                    <label for="floatingInput">To date</label>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="darkbluetext">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- education Modal -->
+   <div class="modal fade" id="experience" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3 needs-validation">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="education" class="form-control" id="floatingInput"
+                            placeholder="education" autocomplete="off">
+                        <label for="floatingInput">Job Title</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="degree" class="form-control" id="floatingInput"
+                            placeholder="degree" autocomplete="off">
+                        <label for="floatingInput">City</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="degree" class="form-control" id="floatingInput"
+                            placeholder="degree" autocomplete="off">
+                        <label for="floatingInput">Comapany Name</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating mb-3">
+                        <input type="date" formControlName="degree" class="form-control" id="floatingInput"
+                            placeholder="degree" autocomplete="off">
+                        <label for="floatingInput">From date</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating mb-3">
+                        <input type="date" formControlName="degree" class="form-control" id="floatingInput"
+                            placeholder="degree" autocomplete="off">
+                        <label for="floatingInput">To date</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="darkbluetext">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
