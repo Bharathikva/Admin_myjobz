@@ -19,7 +19,6 @@ import { SubscriptionComponent } from './pages/subscription/subscription.compone
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { LocationComponent } from './pages/location/location.component';
@@ -28,7 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ApiService } from './core/api.service';
 import { TokenInterceptor } from './core/interceptor.service';
-import { LoginComponent } from './pages/login/login.component';
+
 import { ListCandidatesComponent } from './pages/list-candidates/list-candidates.component';
 import { AddcandidateComponent } from './pages/addcandidate/addcandidate.component';
 import { EditprofileComponent } from './pages/editprofile/editprofile.component';
@@ -47,6 +46,20 @@ import { ViewjobComponent } from './pages/viewjob/viewjob.component';
 import { LogoutComponent } from './pages/logout/logout.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AuthService } from './core/auth.service';
+import { AuthGuardService } from './core/auth-guard.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { NgxOtpInputModule } from 'ngx-otp-input';
+import { NgOtpInputModule } from 'ng-otp-input';
+import { ResumeComponent } from './pages/resume/resume.component';
+import { AdminprofileComponent } from './pages/adminprofile/adminprofile.component';
+import { EmployersubscriptionComponent } from './pages/employersubscription/employersubscription.component';
+import { EditadminprofileComponent } from './pages/editadminprofile/editadminprofile.component';
+import { SafePipe } from './safe.pipe';
+import { ChangePhoneComponent } from './pages/change-phone/change-phone.component';
+
+
+
 
 
 
@@ -83,7 +96,13 @@ import { AuthService } from './core/auth.service';
     CompanyNavComponent,
     EditjobofferComponent,
     ViewjobComponent,
-    LogoutComponent
+    LogoutComponent,
+    ResumeComponent,
+    AdminprofileComponent,
+    EmployersubscriptionComponent,
+    EditadminprofileComponent,
+    SafePipe,
+    ChangePhoneComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,10 +111,10 @@ import { AuthService } from './core/auth.service';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
     NgToastModule,
     NgxPaginationModule,
-    
+    NgxOtpInputModule,
+    NgOtpInputModule,
   ],
   providers: [AuthService,ApiService, {
     provide: HTTP_INTERCEPTORS,

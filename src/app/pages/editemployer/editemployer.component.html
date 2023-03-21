@@ -1,159 +1,168 @@
-<div class="content">
-    <div class="container">
-        <div class="p-5" id="blue">
-            <div class="text-end">
-                <a class="btn fs-3" routerLink="/home/companiesnav/companyprofileinfo"><i class="fa-solid fa-xmark text-danger"></i></a>
-            </div>
-            <h3 class="fw-bolder">Edit Employer Profile.</h3>
-            <h6>Edit company profile page info</h6>
-            <div class="py-5">
-                <form class="row g-3 needs-validation">
-                    <div class="col-12 col-md-12">
-                        <div class="form-floating mb-3">
-                            <input type="text" formControlName="fullName" class="form-control " id="floatingInput"
-                                placeholder="fullName" autocomplete="off">
-                            <label for="floatingInput">Company Name <span style="color: red;">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <input type="email" formControlName="email" class="form-control " id="floatingInput"
-                                placeholder="example@gmail.com" autocomplete="off">
-                            <label for="floatingInput">Email <span style="color: red;">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating">
-                            <input type="phone" formControlName="email" class="form-control " id="floatingInput"
-                                placeholder="+91 01234567890" autocomplete="off">
-                            <label for="floatingInput">Website <span style="color: red;">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating">
-                            <input type="phone" formControlName="email" class="form-control " id="floatingInput"
-                                placeholder="+91 01234567890" autocomplete="off">
-                            <label for="floatingInput">Phone <span style="color: red;">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-12 mb-4">
-                        <div class="form-floating">
-                            <textarea class="form-control " placeholder="Leave a comment here" id="floatingTextarea"
-                                style="height: 150px;"></textarea>
-                            <label for="floatingTextarea">Who Are We</label>
-                        </div>
+<div class="px-3 p-5">
+    <div class="p-5" id="blue">
+        <div class="text-end">
+            <a class="btn fs-3" routerLink="/home/companiesnav/companyprofileinfo"><i
+                    class="fa-solid fa-xmark text-danger"></i></a>
+        </div>
+        <h3 class="fw-bolder">Edit Employer Profile.</h3>
+        <h6>Edit company profile page info</h6>
+        <div class="py-2">
+            <form class="row g-3 needs-validation" [formGroup]="editEmployer" (ngSubmit)="onSubmit()">
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="firstname" name="firstname" class="form-control "
+                            placeholder="firstname" autocomplete="off">
+                        <label for="floatingInput">Company Name <span style="color: red;">*</span></label>
                     </div>
 
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">Industry<span style="color: red;">*</span></label>
-                        </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="founder" class="form-control" id="floatingInput"
+                            placeholder="founder" autocomplete="off">
+                        <label for="floatingInput">Founder <span style="color: red;">*</span></label>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">Founded IN<span style="color: red;">*</span></label>
-                        </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <input type="email" formControlName="email" class="form-control " id="floatingInput"
+                            placeholder="example@gmail.com" autocomplete="off">
+                        <label for="floatingInput">Email <span style="color: red;">*</span></label>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">Company Size<span style="color: red;">*</span></label>
-                        </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input type="text" formControlName="website" class="form-control " id="floatingInput"
+                            placeholder="www.example.com" autocomplete="off">
+                        <label for="floatingInput">Website <span style="color: red;">*</span></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 ">
+
+                    <label class="pb-3">companylogo <span style="color: red;">*</span></label>
+                    <div class="file-drop-area form-floating mb-3">
+                        <span class="fake-btn px-5 w-100" style="width: 100%;">Upload LOGO</span>
+                        <input class="file-input py-2" type="file" multiple>
                     </div>
 
-                    <h4 class="mt-4 fw-bolder p-4" id="blue">Company Location</h4>
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <div class="form-floating">
+                        <input type="phone" formControlName="phone" class="form-control " id="floatingInput"
+                            placeholder="+91 01234567890" autocomplete="off">
+                        <label for="floatingInput">Phone <span style="color: red;">*</span></label>
+                    </div>
+                </div>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating mb-5">
-                            <input type="text" formControlName="fullName" class="form-control " id="floatingInput"
-                                placeholder="fullName" autocomplete="off">
-                            <label for="floatingInput">Address Line 1 <span style="color: red;">*</span></label>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <select class="form-select " formControlName="state" [(ngModel)]="selectedState"
+                            (change)="onStateChange()" id="floatingSelect" aria-label="Floating label select example">
+                            <!-- <option selected hidden>Please Select Industry</option> -->
+                            <option *ngFor="let state of states" value="{{state.state}}">{{state.state}}</option>
 
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating mb-5">
-                            <input type="text" formControlName="fullName" class="form-control " id="floatingInput"
-                                placeholder="fullName" autocomplete="off">
-                            <label for="floatingInput">Address Line 2 <span style="color: red;">*</span></label>
-                        </div>
+                        </select>
+                        <label for="floatingSelect">State<span style="color: red;">*</span></label>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">State<span style="color: red;">*</span></label>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-3">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">District<span style="color: red;">*</span></label>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating mb-3">
+                        <select class="form-select " formControlName="city" id="floatingSelect"
+                            aria-label="Floating label select example">
+                            <!-- <option selected hidden>Please Select Industry</option> -->
+                            <option *ngFor="let city of cities">{{city.city}}</option>
 
-                    <div class="col-12 col-md-4">
-                        <div class="form-floating mb-5">
-                            <select class="form-select " formControlName="category" id="floatingSelect"
-                                aria-label="Floating label select example">
-                                <option selected hidden>Select option</option>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                            <label for="floatingSelect">City<span style="color: red;">*</span></label>
-                        </div>
+                        </select>
+                        <label for="floatingSelect">City<span style="color: red;">*</span></label>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating mb-5">
-                            <input type="text" formControlName="fullName" class="form-control " id="floatingInput"
-                                placeholder="fullName" autocomplete="off">
-                            <label for="floatingInput">LinkdIn<span style="color: red;">*</span></label>
-                        </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <select class="form-select " formControlName="industryname" id="floatingSelect"
+                            aria-label="Floating label select example">
+                            <!-- <option selected hidden>Please Select Industry</option> -->
+                            <option *ngFor="let industry of industries">{{industry.name}}</option>
+
+                        </select>
+                        <label for="floatingSelect">Industry<span style="color: red;">*</span></label>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-floating mb-5">
-                            <input type="text" formControlName="fullName" class="form-control " id="floatingInput"
-                                placeholder="fullName" autocomplete="off">
-                            <label for="floatingInput">YouTube<span style="color: red;">*</span></label>
-                        </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="isexperienced" class="form-control " placeholder="firstname"
+                            autocomplete="off">
+                        <label for="floatingInput">Is Experienced <span style="color: red;">*</span></label>
                     </div>
 
-                    <div class="col mt-5" style="text-align: center;">
-                        <button type="button" class="btn btn-primary btn-md rounded-5"
-                            style="width: 25%;">Update</button>
-                        <!-- <a class="btn btn-secondary btn-md mx-3 rounded-5" routerLink="/home/companiesnav/companyprofileinfo"
-                            style="width: 25%;">Close</a> -->
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="overallexperience" class="form-control "
+                            placeholder="firstname" autocomplete="off">
+                        <label for="floatingInput">Over All Experience <span style="color: red;">*</span></label>
                     </div>
 
-                </form>
-            </div>
+                </div>
+
+
+
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="address1" placeholder="Leave a comment here"
+                            id="floatingTextarea" style="height: 150px;"></textarea>
+                        <label for="floatingTextarea">Address1</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="address2" placeholder="Leave a comment here"
+                            id="floatingTextarea" style="height: 150px;"></textarea>
+                        <label for="floatingTextarea">Address2</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input type="phone" formControlName="companyphone" class="form-control " id="floatingInput"
+                            placeholder="example" autocomplete="off">
+                        <label for="floatingInput">Companyphone <span style="color: red;">*</span></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input type="text" formControlName="companysize" class="form-control " id="floatingInput"
+                            placeholder="example" autocomplete="off">
+                        <label for="floatingInput">Companysize <span style="color: red;">*</span></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input type="text" formControlName="establisheddate" class="form-control " id="floatingInput"
+                            placeholder="www.example.com" autocomplete="off">
+                        <label for="floatingInput">Establisheddate <span style="color: red;">*</span></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input type="text" formControlName="linkedin" class="form-control " id="floatingInput"
+                            placeholder="www.example.com" autocomplete="off">
+                        <label for="floatingInput">linkedin Url <span style="color: red;">*</span></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 mb-4">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="description" placeholder="Leave a comment here"
+                            id="floatingTextarea" style="height: 150px;"></textarea>
+                        <label for="floatingTextarea">Description</label>
+                    </div>
+                </div>
+
+                <div class="col mt-2 text-center">
+                    <button type="submit" class="btn btn-primary btn-md rounded-5" style="width: 25%;">Update</button>
+
+                </div>
+
+            </form>
         </div>
     </div>
 </div>

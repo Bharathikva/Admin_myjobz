@@ -12,11 +12,29 @@ import { AuthService } from 'src/app/core/auth.service';
 export class SettingsComponent {
 
  
-  jjj?: string;
+ 
+  hlo?: string;
 
-  jjf = false;
+  das?:string;
+  com?:string;
+  can?:string;
+  set?:string;
+  num?:string;
+
+  jjf = false; 
   constructor(private auth: ApiService, private newauth: AuthService,private router:Router) {
-    this.vada();
+   
+  }
+
+  toggleSidebar() {
+    const sidebar:any = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+    const content:any = document.querySelector('.content');
+    content.classList.toggle('close');
+    const newtoggle:any = document.querySelector('.newtoggle');
+    newtoggle.classList.toggle('fixed');
+
+
   }
 
   ngOnInit(): void {
@@ -24,20 +42,50 @@ export class SettingsComponent {
 
   }
 
-  vada() {
-    if (this.jjf == false) {
+  
 
-      this.jjf = true;
-      this.jjj = "active";
-    } else {
-      this.jjj = "inactive";
-    }
 
+  dasn(){
+    this.das = "active";
+    this.com = "inactive";
+    this.can = "inactive";
+    this.set = "inactive";
+
+  }
+  comn(){
+    this.das = "inactive";
+    this.com = "active";
+    this.can = "inactive";
+    this.set = "inactive";
+    this.num = "inactive";
+  }
+  cann(){
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "active";
+    this.set = "inactive";
+    this.num = "inactive";
+  }
+  setn(){
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "inactive";
+    this.set = "active";
+    this.num = "inactive";
+  }
+
+  pho(){
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "inactive";
+    this.set = "inactive";
+    this.num = "active";
   }
 
   removeToken() {
     window.sessionStorage.clear
     this.router.navigate([''])
   }
+
  
 }

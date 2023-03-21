@@ -1,90 +1,120 @@
 /* The side navigation menu */
 .sidebar {
-    width: 250px;
-    background-color: #E6F0F9;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
+  /* padding: 30px 0px 30px 30px; */
+  font-size: 16px;
+  font-weight: 600;
+  width: 250px;
+  background-color: #073C7E;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  color: white;
+  transition: width 1s;
+
 }
 
-#side {
-    padding: 30px 0px 30px 30px;
-    /* margin: 10px; */
-    /* border-radius: 20px; */
-    font-size: 16px;
-    font-weight: 600;
+.sidebar.open {
+  width: 0px;
+  /* show the sidebar by moving it into view */
+  padding: 0px 0px 0px 0px;
 }
+
+.newtoggle {
+  position: absolute;
+  margin-left: 200px;
+  color: white;
+  transition: margin-left 1s;
+}
+
+.newtoggle.fixed{
+  position: absolute;
+  margin-left: 0px;
+  color: #003F7F;
+}
+
 
 /* Sidebar links */
 .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-    border-radius: 30px 0px 0px 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  border-radius: 30px 0px 0px 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+.sidebar button {
+  margin-left: 30px;
 }
 
 /* Active/current link */
 .sidebar a.active {
-    background-color: white;
-    color: #073C7E;
+  background-color: white;
+  color: #073C7E;
 }
 
 .sidebar a:hover,
 .sidebar a:focus {
-    background-color: #ffffff;
-    color: #073C7E;
+  background-color: white;
+  color: #073C7E;
 }
 
 
 
-/* Links on mouse-over
-.sidebar a:active {
+/* Links on mouse-over */
+/* .sidebar a:hover:not(.active) {
     background-color: white;
     color: #073C7E;
-} */
+  } */
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-  
+.content {
+  margin-left: 250px;
+  padding: 1px 16px;
+  transition: margin-left 1s;
+
+}
+
+.content.close {
+  margin-left: 0px;
+  padding: 1px 16px;
+
 }
 
 div a.active {
-    color: #003F7F;
+  color: #003F7F;
 }
 
 a a:hover,
 a a:focus {
-    color: #003F7F;
+  color: #003F7F;
 }
 
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
 
-    }
+  }
 
-    .sidebar a {
-        float: left;
-    }
+  .sidebar a {
+    float: left;
+  }
 
-    div.content {
-        margin-left: 0;
-    }
+  div.content {
+    margin-left: 0;
+  }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }

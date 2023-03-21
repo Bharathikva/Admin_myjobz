@@ -1,5 +1,3 @@
-
-
 /* #spin {
     animation: rotate 8s infinite linear;
   }
@@ -14,11 +12,26 @@
   } */
 
 
-  #image-container {
-    text-align: center;
-  }
-  
-  #image-container img {
-    display: inline-block;
-    margin: 0 auto;
-  }
+#image-container {
+  text-align: center;
+}
+
+#image-container img {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.bg-gradient-primary-to-secondary {
+  background: linear-gradient(45deg, #055bc4, #073C7E) !important;
+}
+
+#bg {
+
+
+  padding: 25px;
+  /* filter:opacity(60%); */
+  background: url('../../../assets/img/dddd.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

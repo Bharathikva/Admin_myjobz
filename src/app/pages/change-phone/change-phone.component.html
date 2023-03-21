@@ -1,0 +1,48 @@
+<div class="container" >
+    <div class="row d-flex py-5">
+      <div class="col-12 justify-content-center" id="leo" style="text-align: -webkit-center;">
+        <div class="p-5">
+            <div class="rounded-3 ">
+                <h2 class="mb-3">Change <span class="fw-bolder" id="darkbluetext">Phone Number</span> </h2>
+                <!-- <p class="text-center">Login via Phone Number and OTP</p> -->
+                <div>
+                    
+                     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                      <div class="col-12 col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" type="phone" formControlName="phoneNumber" class="form-control" id="floatingInput"
+                                placeholder="h" autocomplete="off">
+                            <label for="floatingInput">Phone Number: <span style="color: red;">*</span></label>
+                        </div>
+                    </div>
+                      <div *ngIf="hidebutton">
+                        <button class="btn text-white" id="darkblue" type="submit" >Send OTP</button>
+                      </div>
+                   
+              
+                    <div class="col-12 mb-3">
+                        <div *ngIf="showOTPForm">
+                        
+                        <p id="darkbluetext">Enter the OTP sent to {{ form.value.phoneNumber }}</p>
+                        <div class="mb-3">
+                          <ng-otp-input  #ngOtpInput (onInputChange)="onOtpChange($event)"  [config]="{length:4,inputClass:'dot',allowNumbersOnly:true}"></ng-otp-input>
+                        </div>
+                        <button class="btn text-white me-3" id="darkblue"  type="submit" (click)="changeNumber()">Verify OTP</button>
+                        <!-- <span *ngIf="otp" class="o-t-p">Entered otp :-{{otp}}</span> -->
+                       
+                        <a id="darkbluetext" type="submit" >Resend OTP</a>
+                      
+                       
+                      </div>
+                 
+                    </div>
+                  </form>
+                
+                   
+                    </div>
+            </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>

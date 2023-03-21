@@ -13,6 +13,17 @@ export class CompanyNavComponent {
     this.vada();
   }
  
+  toggleSidebar() {
+    const sidebar:any = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+    const content:any = document.querySelector('.content');
+    content.classList.toggle('close');
+    const newtoggle:any = document.querySelector('.newtoggle');
+    newtoggle.classList.toggle('fixed');
+
+
+  }
+  
   ngOnInit(): void {
   
   }

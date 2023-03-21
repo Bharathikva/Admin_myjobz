@@ -1,14 +1,10 @@
-div.content {
-    margin-left: 250px;
-    padding: 1px 16px;
-  
-  }
+
 .file-input {
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
-    width: 80%;
+    width: 100%;
     cursor: pointer;
     opacity: 0;
   }

@@ -1,129 +1,90 @@
-<div class="content">
-    <div class="row mt-3">
-        <div class="col-12">
-            <div class="row d-flex">
-                <div class="col-12 col-md-4">
-                    <div class="p-3">
 
-                        <div>
-                            <form class="row g-3 needs-validation">
-                                
-                                <div class="p-3 rounded-3" id="blue">
-                                    <h4 class="fw-bolder">
-                                        Add Location
-                                    </h4>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" formControlName="city" class="form-control" id="floatingInput"
-                                            placeholder="city Name" autocomplete="off">
-                                        <label for="floatingInput">State</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" formControlName="city" class="form-control" id="floatingInput"
-                                            placeholder="city Name" autocomplete="off">
-                                        <label for="floatingInput">District</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" formControlName="city" class="form-control" id="floatingInput"
-                                            placeholder="city Name" autocomplete="off">
-                                        <label for="floatingInput">City Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" formControlName="category" id="floatingSelect"
-                                            aria-label="Floating label select example">
-                                            <option selected hidden>Please Select Status</option>
-                                            <option>Active</option>
-                                            <option>InActive</option>
-                                        </select>
-                                        <label for="floatingSelect">Status</label>
-                                    </div>
-                                </div>
-                                <div class="text-end">
-                                    <button class="btn text-white w-100" id="darkblue">Submit</button>
-                                </div>
-                            </form>
+        <div class="row d-flex">
+            <!-- <div class="col-12 col-md-4"> -->
+            <div class="p-3">
 
+                <div>
+                    <form class="row g-3 needs-validation"  [formGroup]="form">
+
+                        <div class="p-3 mt-2 rounded-3">
+                            <h4 class="fw-bolder">
+                                Add Location
+                            </h4>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-8">
-                   
-                    <div class="p-3 mt-3 rounded-3 invento" id="blue">
-                        <div class="bg-white p-3 rounded-3">
-                            <table id="example" class="table bg-white table-borderless">
-                            <thead>
-                              <tr class="text-white" style="background-color: #003F7F;">
-                                <th>S No</th>
-                                <th>Location Name</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                              <tr id="blue">
-                                <td>1</td>
-                                <td class="fw-bolder">Chennai</td>
-                                <td>Active</td>
-                                <td><a class="btn1"><i class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                    <a class="btn1"><i class="fa-solid fa-trash text-danger me-2"></i></a></td>
-                              </tr>
-                            </tbody>
-                          </table>  
+                        <div class="col-3">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="city" class="form-control" id="floatingInput"
+                                    placeholder="city Name" autocomplete="off">
+                                <label for="floatingInput">State</label>
+                            </div>
                         </div>
-                      
-                    </div>
+                        <div class="col-3">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="city" class="form-control" id="floatingInput"
+                                    placeholder="city Name" autocomplete="off">
+                                <label for="floatingInput">District</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-floating mb-3">
+                                <input type="text" formControlName="city" class="form-control" id="floatingInput"
+                                    placeholder="city Name" autocomplete="off">
+                                <label for="floatingInput">City Name</label>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-floating mb-3">
+                                <select class="form-select" formControlName="category" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected hidden>Please Select Status</option>
+                                    <option>Active</option>
+                                    <option>InActive</option>
+                                </select>
+                                <label for="floatingSelect">Status</label>
+                            </div>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button class="btn text-white" style="width: 20%;" id="darkblue">Submit</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="col-12">
+            <div>
+
+                <div class="accordion" id="accordionExample" *ngFor="let state of states let i = index"><!--ngfor loop started for dynamic data -->
+                    <div class="accordion-item" >
+                        <h2 class="accordion-header" [id]="'heading'+i">
+
+                            <button class="accordion-button" (click)="viewCities(state)"
+                                [ngClass]="{ 'collapsed': i != 0 }" type="button" data-bs-toggle="collapse"
+                                [attr.data-bs-target]="'#collapse'+i" aria-expanded="true"
+                                [attr.aria-controls]="'collapse'+i">
+                                {{state.state}}  
+                            </button>
+                        </h2>
+                        <div [id]="'collapse'+i" class="accordion-collapse collapse" 
+                            [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row d-flex" >
+                                    <div class="col-4 " *ngFor="let city of cities">
+                                          <p class="p-3  shadow-sm text-white rounded-3 fw-bolder" id="darkblue">{{city.city}}</p>
+                                    </div>
+                                </div>
+
+                              
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+       
+        </div>
+    

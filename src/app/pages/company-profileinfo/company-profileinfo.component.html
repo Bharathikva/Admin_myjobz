@@ -1,17 +1,23 @@
-<div class="content">
+
     <div class="row mt-2">
         <div class="col-12">
-            <div class="row d-flex">
+            <div class="row d-flex" >
                 <div class="col-12 col-md-4">
-                    <div class="p-3 rounded shadow-sm" id="blue">
+                    <div class="p-3 rounded shadow-sm h-100" id="blue">
+                        <div class="fs-3" > <a routerLink="/home/companies  "><i class="fa-solid fa-arrow-left" id="darkbluetext"></i></a> </div>
                         <div class="text-center p-3">
-                            <img src="/assets\img\company.png" alt="" width="60%">
+                            <img class="{{d}}" src="{{imageUrl}}" style="width: 200px; height: 200px;" alt="'">
+            
+                            <ng-container *ngIf="expression; getEmployeeData">
+
+                                <img src="/assets\img\default.jpeg" style="width: 200px; height: 200px;"
+                                    alt="default img">
+                            </ng-container>
                         </div>
                         <div class="text-center">
-                            <h5 class="fw-bolder" style="color: #073C7E;">Ashok Leyland</h5>
-                            <p class="text-success">verified</p>
-                            <a href="#" class="btn text-white rounded-pill" id="darkblue">Download Document <i
-                                    class="fa-solid fa-cloud-arrow-down ml-2"></i></a>
+                            <h5 class="fw-bolder mt-3" style="color: #073C7E;">{{employerData.firstname}}</h5>
+                            <p>{{employerData.role}}</p>
+
                         </div>
                     </div>
 
@@ -32,7 +38,7 @@
                                         <h3 class="fw-bolder">Address</h3>
                                         <div class="fs-6 fw-bolder">
                                              <br> <span style="font-size: 18px;color: #073C7E;"
-                                                class="fw-normal">No.5/310, Pillaiyar Koil, RG Salai, OMR Okkiyam, Thoraipakkam, Chennai - 600097, Tamil Nadu, INDIA</span>
+                                                class="fw-normal">{{employerData.address1}} {{employerData.address2}}</span>
                                         </div>
                                     </div>
                                    
@@ -54,13 +60,13 @@
                                         <div class="fs-6 fw-bolder">
                                             Phone Number <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-phone me-2"></i>6383711863</span>
+                                                    class="fa-solid fa-phone me-2"></i>{{this.data1}}</span>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="fs-6 fw-bolder">
-                                            Founded <br> <span style="font-size: 18px;color: #073C7E;"
-                                                class="fw-normal"><i class="fa-solid fa-pen-nib me-2"></i>1998</span>
+                                            Founder <br> <span style="font-size: 18px;color: #073C7E;"
+                                                class="fw-normal"><i class="fa-solid fa-pen-nib me-2"></i>{{this.data1}}</span>
                                         </div>
                                     </div>
 
@@ -68,16 +74,34 @@
                                 <div class="row d-flex p-3 ">
                                     <div class="col-12 col-md-6">
                                         <div class="fs-6 fw-bolder">
-                                            Headquaters <br> <span style="font-size: 18px;color: #073C7E;"
+                                            city <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-location-dot me-2"></i>chennai</span>
+                                                    class="fa-solid fa-location-dot me-2"></i>{{employerData.city}},{{employerData.state}}</span>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="fs-6 fw-bolder">
                                             Industrial Preference <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-industry me-2"></i>Automobile</span>
+                                                    class="fa-solid fa-industry me-2"></i>{{employerData.industryname}}</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row d-flex p-3 ">
+                                    <div class="col-12 col-md-6">
+                                        <div class="fs-6 fw-bolder">
+                                            Email ID <br> <span style="font-size: 18px;color: #073C7E;"
+                                                class="fw-normal"><i
+                                                    class="fa-solid fa-envelope me-2"></i>{{employerData.email}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="fs-6 fw-bolder">
+                                            Website <br> <span style="font-size: 18px;color: #073C7E;"
+                                                class="fw-normal"><i
+                                                    class="fa-solid fa-earth-americas me-2"></i>{{employerData.website}}</span>
                                         </div>
                                     </div>
 
@@ -91,13 +115,9 @@
             </div>
         </div>
     </div>
-</div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary">
-    Launch demo modal
-</button>
+
 
 <!-- education Modal -->
 <div class="modal fade" id="education" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

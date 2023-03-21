@@ -1,0 +1,87 @@
+
+    <div class="pt-5">
+        <div class="row d-flex">
+            <div class="col">
+                <h5 class="fw-bolder mb-3">Subscription</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6  text-center">
+            <div class="form-floating mt-3 mb-4">
+                <select class="form-select"  formControlName="category" [(ngModel)]="plans" (change)="getSelectedValue($event)" id="floatingSelect"
+                    aria-label="Floating label select example">
+                    <option value="BASIC">BASIC</option>
+                    <option value="STANDARD">STANDARD</option>
+                    <option value="PREMIUM">PREMIUM</option>
+                    <option value="PREMIUM">No Plan</option>
+                </select>
+                <label for="floatingSelect">Select a Plan</label>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="text-center mb-3">
+                <div class="form-floating mt-3 mb-4">
+                <button class="btn text-white" style="width: 20%;" id="darkblue">Apply</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-5">
+        <div style="padding: 80px;border-radius: 40px;background-color: #E6F0F9;">
+            <h2 class="card-title fw-bolder" style="color: #003F7F;text-align: center;">Subscription Plan</h2>
+            <div class="row" [ngSwitch]="plans">
+                <div class="col-12 col-md-4" *ngSwitchCase="'BASIC'">
+                    <div class="card pt-5 pb-5 p-3 border-0 shadow rounded-5" id="leo"
+                        style="align-items: center;color: #003F7F;">
+                        <h3 class="card-title fw-bolder">BASIC</h3>
+                        <P class="card-subtitle fs-2" style="font-weight: bolder;">Rs.200</P>
+                        <p class="card-text">Apply 10 jobs</p>
+                        <p>5 jobs applied</p>
+                        <p>5 remaining jobs</p>
+                        <h5 class="fw-bolder mt-3 mb-3">30 days validity</h5>
+                        <p>Expires on: 12/02/2023</p>
+                        <!-- <button class="btn btn-lg text-white mt-3"
+                            style="background-color: #003F7F;">Resubscribe</button> -->
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" *ngSwitchCase="'STANDARD'">
+                    <div class="card pt-5 pb-5 p-3 shadow  rounded-5" id="leo"
+                        style="align-items: center;color: #003F7F;background-color: #E6F0F9;">
+                        <h3 class="card-title fw-bolder">STANDARD</h3>
+                        <P class="card-subtitle fs-1" style="font-weight: bolder;">Rs.500</P>
+                        <p class="card-text mt-2">Apply 20 jobs</p>
+                        <h5 class="mt-2 fw-bolder">6 months validity</h5>
+                        <ul style="line-height: 44px;">
+                            <li>All benefits of personal</li>
+                            <li>Various versions</li>
+                            <li>Unlimited storage</li>
+                        </ul>
+                        <!-- <button class="btn btn-lg text-white mt-2" style="background-color: #003F7F;">Choose</button> -->
+                    </div>
+                </div>
+                <div class="col-12 col-md-4" *ngSwitchCase="'PREMIUM'">
+                    <div class="card pt-5 pb-5 p-3  shadow rounded-5" id="leo"
+                        style="align-items: center;color: #003F7F;background-color: #E6F0F9;">
+                        <h3 class="card-title fw-bolder">PREMIUM</h3>
+                        <P class="card-subtitle fs-1" style="font-weight: bolder;">Rs.1000</P>
+                        <p class="card-text mt-2">Apply 50 jobs</p>
+                        <h5 class="mt-2 fw-bolder">1 year validity</h5>
+                        <ul style="line-height:36px;">
+                            <li>All benefits of team</li>
+                            <li>Sentance structure</li>
+                            <li>Lifetime access to all<br>
+                                the content</li>
+                        </ul>
+                        <!-- <button class="btn btn-lg text-white" style="background-color: #003F7F;">Choose</button> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+

@@ -1,16 +1,2 @@
-div.content {
-    margin-left: 250px;
-    padding: 1px 16px;
-  }
 
 
-.table {
-  border-collapse: separate;
-  border-spacing:0 20px;
-}
-
-.invento{
- overflow: auto;
- height: 500px;
- position: relative;
-}

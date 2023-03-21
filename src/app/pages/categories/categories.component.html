@@ -1,89 +1,87 @@
-<div class="content">
-    <div class="row mt-3">
+
+    <div class="row">
         <div class="col-12">
             <div class="row d-flex">
                 <!-- <div class="col-12 col-md-4"> -->
-                    <div class="px-3 mt-4">
+                <div class="px-3 mt-4">
 
-                        <div>
-                            <form class="row g-3 needs-validation">
-                                <div class="p-3 rounded-3">
-                                    <h4 class="fw-bolder">
-                                        Add Industry
-                                    </h4>
+                    <div>
+                        <form class="row g-3 needs-validation">
+                            <div class="p-3 rounded-3">
+                                <h4 class="fw-bolder">
+                                    Add Industry
+                                </h4>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating mt-3 mb-4">
+                                    <input type="text" formControlName="industry" class="form-control"
+                                        id="floatingInput" placeholder="industry" autocomplete="off">
+                                    <label for="floatingInput">Add Industry</label>
                                 </div>
-                                <div class="col-4">
-                                    <div class="form-floating mt-3 mb-4">
-                                        <input type="text" formControlName="industry" class="form-control"
-                                            id="floatingInput" placeholder="industry" autocomplete="off">
-                                        <label for="floatingInput">Add Industry</label>
-                                    </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-floating mt-3 mb-4">
+                                    <input type="text" formControlName="categoryname" class="form-control"
+                                        id="floatingInput" placeholder="categoryname" autocomplete="off">
+                                    <label for="floatingInput">Add Category Name</label>
                                 </div>
-                                <div class="col-4">
-                                    <div class="form-floating mt-3 mb-4">
-                                        <input type="text" formControlName="categoryname" class="form-control"
-                                            id="floatingInput" placeholder="categoryname" autocomplete="off">
-                                        <label for="floatingInput">Add Category Name</label>
-                                    </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-floating mt-3 mb-4">
+                                    <select class="form-select" formControlName="category" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected hidden>Please Select Status</option>
+                                        <option>Active</option>
+                                        <option>InActive</option>
+                                    </select>
+                                    <label for="floatingSelect">Status</label>
                                 </div>
+                            </div>
 
-                                <div class="col-4">
-                                    <div class="form-floating mt-3 mb-4">
-                                        <select class="form-select" formControlName="category" id="floatingSelect"
-                                            aria-label="Floating label select example">
-                                            <option selected hidden>Please Select Status</option>
-                                            <option>Active</option>
-                                            <option>InActive</option>
-                                        </select>
-                                        <label for="floatingSelect">Status</label>
-                                    </div>
-                                </div>
-
-                                <div class="text-center mb-3">
-                                    <button class="btn text-white" style="width: 20%;" id="darkblue">Save</button>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-
-                    <div class="p-3 mt-4 rounded-3" id="blue">
-                        <div class="bg-white p-3 rounded-3 invento" >
-                            <table id="example" class="table bg-white table-borderless">
-                                <thead>
-                                    <tr class="text-white" style="background-color: #003F7F;">
-                                        <th>S No</th>
-                                        <!-- <th>Industery Name</th> -->
-                                        <th>Category Name</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let person of industry" id="blue">
-                                        <td>{{person.industryid}}</td>
-                                        <!-- <td>{{person.industry}}</td> -->
-                                        <td class="fw-bolder">{{person.name}}</td>
-                                        <td>Active</td>
-                                        <td><a class="btn1"><i
-                                                    class="fa-solid fa-pen-to-square text-success me-2"></i></a>
-                                            <a class="btn1"><i
-                                                    class="fa-solid fa-trash text-danger me-2"></i></a>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-
-
-                        </div>
+                            <div class="text-center mb-3">
+                                <button class="btn text-white" style="width: 20%;" id="darkblue">Save</button>
+                            </div>
+                        </form>
 
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <div>
+
+                    <div class="accordion" id="accordionExample"><!--ngfor loop started for dynamic data -->
+                        <div class="accordion-item" *ngFor="let industry of allIndustry let i = index">
+                            <h2 class="accordion-header" [id]="'heading'+i">
+
+                                <button class="accordion-button"
+                                    [ngClass]="{ 'collapsed': i != 0 }" type="button" data-bs-toggle="collapse"
+                                    [attr.data-bs-target]="'#collapse'+i" aria-expanded="true"
+                                    [attr.aria-controls]="'collapse'+i">
+                                    {{industry.industry}}  
+                                </button>
+                            </h2>
+                            <div [id]="'collapse'+i" class="accordion-collapse collapse" [ngClass]="{ 'show': i == 0 }"
+                                [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="row d-flex" >
+                                        <div class="col-4 " *ngFor="let j of industry.categories">
+                                              <p class="p-3  shadow-sm text-white rounded-3 fw-bolder" id="darkblue">{{j}}</p>
+                                        </div>
+                                    </div>
+
+                                  
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+           
+            </div>
         </div>
     </div>
-<!-- </div> -->

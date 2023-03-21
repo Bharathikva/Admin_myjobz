@@ -1,17 +1,17 @@
 
-<div class="content">
+<div class="px-2">
     <div class="p-5" id="blue">
         <div class="text-end">
             <a class="btn fs-3" routerLink="/home/candidate/profileinfo"><i class="fa-solid fa-xmark text-danger"></i></a>
         </div>
-        <h3 class="fw-bolder">Enter Candidate Details</h3>
-        <h6>Add Candidate profile page info</h6>
+        <h3 class="fw-bolder">Edit Employee Details</h3>
+        <!-- <h6>Add Candidate profile page info</h6> -->
         <div class="py-3">
-            <form class="row g-3 needs-validation">
+            <form class="row g-3 needs-validation" [formGroup]="editEmployee" (ngSubmit)="onSubmit()">
                 <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <input type="text" formControlName="fullName" class="form-control" id="floatingInput"
-                            placeholder="fullName" autocomplete="off">
+                        <input type="text" formControlName="firstname" class="form-control" id="floatingInput"
+                            placeholder="firstname" autocomplete="off">
                         <label for="floatingInput">Full Name</label>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-floating">
-                        <input type="phone" formControlName="email" class="form-control" id="floatingInput"
+                        <input type="phone" formControlName="phone" class="form-control" id="floatingInput"
                             placeholder="+91 01234567890" autocomplete="off">
                         <label for="floatingInput">Contact Number</label>
                     </div>
@@ -34,150 +34,32 @@
 
                 <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
+                        <select class="form-select" formControlName="industryname" id="floatingSelect"
                             aria-label="Floating label select example">
-                            <option selected hidden>Please select option</option>
-                            <option>bharathi</option>
+                            <option *ngFor="let industry of industries">{{industry.name}}</option>
                         </select>
                         <label for="floatingSelect">Industrial Preference <span style="color: red;">*</span></label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 mb-2">
-                    <label class="p-1">Gender <span style="color: red;">*</span></label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                            value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Female</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Others </label>
-                    </div>
-                </div>
+               
                 <div class="col-12 col-md-6 mb-3">
                     <div class="form-floating">
-                        <input type="date" formControlName="email" class="form-control" id="floatingInput"
-                            placeholder="+91 01234567890" autocomplete="off">
+                        <input type="date" formControlName="dob" class="form-control" id="floatingInput"
+                            placeholder="00/00/00" autocomplete="off">
                         <label for="floatingInput">Dob</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected hidden>Select option</option>
-                            <option>option1</option>
-                            <option>option2</option>
-                        </select>
-                        <label for="floatingSelect">Job Type <span style="color: red;">*</span></label>
+                        <input type="text" formControlName="city" class="form-control" id="floatingInput"
+                            placeholder="city" autocomplete="off">
+                        <label for="floatingInput">City</label>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected hidden>Select category</option>
-                            <option>category1</option>
-                            <option>category2</option>
-                        </select>
-                        <label for="floatingSelect">Category <span style="color: red;">*</span></label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected hidden>Select location</option>
-                            <option>category1</option>
-                            <option>category2</option>
-                        </select>
-                        <label for="floatingSelect">Location <span style="color: red;">*</span></label>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 mb-3 px-3">
-                    <label>Work Status <span style="color: red;">*</span></label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="ex" value="option1">
-                        <label class="form-check-label" for="ex">I'AM EXPERINCED</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="fr" value="option2">
-                        <label class="form-check-label" for="fr">I'AM FRESHER</label>
-                    </div>
-
-                </div>
-
-                <!-- file upload -->
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="pb-3">Resume <span style="color: red;">*</span></label>
-                            <div class="file-drop-area form-floating mb-3">
-                                <span class="fake-btn px-5" style="width: 50%;">Upload resume</span>
-                                <input class="file-input py-2" type="file" multiple>
-                            </div>
-                        </div>
-                        <div class="col-6" style="margin-top: 35px;">
-
-                            <p style="color: blue">DOC,DOCX,PDF</p>
-                        </div>
-
-
-                    </div>
-
-                </div>
-                <!-- file upload end -->
-
-                <div class="col-12 col-md-6 mb-3">
-                    <div class="form-floating">
-                        <input type="phone" formControlName="email" class="form-control" id="floatingInput"
-                            placeholder="h" autocomplete="off">
-                        <label for="floatingInput">Job Title <span style="color: red;">*</span></label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 py-2">
-                    <div class="form-floating">
-                        <input type="phone" formControlName="email" class="form-control" id="floatingInput"
-                            placeholder="h" autocomplete="off">
-                        <label for="floatingInput">Employer Name<span style="color: red;">*</span></label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 mt-4">
-                    <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected hidden>Select one</option>
-                            <option>1</option>
-                            <option>2</option>
-                        </select>
-                        <label for="floatingSelect">Over All Experience<span style="color: red;">*</span></label>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 mt-4">
-                    <div class="form-floating mb-3">
-                        <select class="form-select" formControlName="category" id="floatingSelect"
-                            aria-label="Floating label select example">
-                            <option selected hidden>Select any one</option>
-                            <option>10,000</option>
-                            <option>15,000</option>
-                        </select>
-                        <label for="floatingSelect">Last Drawn Salary<span style="color: red;">*</span></label>
-                    </div>
-                </div>
-
-          
 
                 <div class="col-12">
-                    <button type="button" class="btn btn-primary btn-md rounded-5" style="width: 25%;">Update</button>
-                    <!-- <a class="btn btn-secondary btn-md mx-3 rounded-5" routerLink="/home/candidate/profileinfo"
-                        style="width: 25%;">Close</a> -->
+                    <button type="submit" class="btn btn-primary btn-md rounded-5" style="width: 25%;">Update</button>
+               
                 </div>
 
             </form>

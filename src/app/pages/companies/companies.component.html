@@ -1,6 +1,6 @@
 <div class="p-5">
   <div class="d-flex justify-content-between align-items-center">
-    <h2 class="fw-bolder" style="color: #003F7F;">Companies</h2>
+    <h2 class="fw-bolder" style="color: #003F7F;">Employer</h2>
     <div class="p-3 rounded-3 shadow-sm" id="blue">
      <input class="me-3 p-1" type="text" [(ngModel)]="searchText" placeholder="Search Company..." (keyup)="filterData()" />
      <a routerLink="/home/addemployer" class="btn text-white align-self-center" id="darkblue"><i
@@ -20,20 +20,19 @@
         <th>Company Name</th>
         <th>City</th>
         <th>Phone Number</th>
-        <th>Industry</th>
-        <th>Jobs Posted</th>
-        <th>Status</th>
+        <th>Company Size</th>
+        <th>Established Date</th>
       </tr>
     </thead>
-    <tbody>
-      <tr  routerLink="/home/companiesnav/companyprofileinfo" *ngFor="let person of filteredData | paginate: { itemsPerPage: count, currentPage: p }" id="blue">
+    <!-- routerLink="/home/companiesnav/companyprofileinfo" -->
+    <tbody >
+      <tr   (click)="viewEmployer(person)"  id="blue" *ngFor="let person of filteredData | paginate: { itemsPerPage: count, currentPage: p }">
         <td>{{person.id}}</td>
-        <td class="fw-bolder">{{person.company}}</td>
-        <td>{{person.city}}</td>
+        <td class="fw-bolder">{{person.firstname}}</td>
+        <td>{{person.city}},{{person.state}}</td>
         <td>{{person.companyphone}}</td>
-        <td>{{person.industry}}</td>
-        <td>{{person.joblocation}}</td>
-        <td>{{person.status}}</td>
+        <td>{{person.companysize}}</td>
+        <td>{{person.establisheddate}}</td>
       </tr>
     </tbody>
   </table>

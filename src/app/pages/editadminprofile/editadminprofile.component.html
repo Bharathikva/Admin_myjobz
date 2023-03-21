@@ -1,0 +1,88 @@
+<div class="px-3">
+    <div class="p-5" id="blue">
+        <div class="text-end">
+            <a class="btn fs-3" routerLink="/home/settings/admin"><i class="fa-solid fa-xmark text-danger"></i></a>
+        </div>
+        <h3 class="fw-bolder py-3">Edit Admin Profile</h3>
+        <!-- <h6>Add Candidate profile page info</h6> -->
+        <div class="">
+            <form class="row g-3 needs-validation"  [formGroup]="editUser" (ngSubmit)="onSubmit()">
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="firstname" class="form-control" id="floatingInput"
+                            placeholder="firstname" autocomplete="off">
+                        <label for="floatingInput">Full Name</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <input type="text" formControlName="email" class="form-control" id="floatingInput"
+                            placeholder="example@gmail.com" autocomplete="off">
+                        <label for="floatingInput">Email Address</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-floating">
+                        <input type="date" formControlName="dob" class="form-control" id="floatingInput"
+                            placeholder="+91 01234567890" autocomplete="off">
+                        <label for="floatingInput">Date Of Birth</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <select class="form-select " formControlName="state" [(ngModel)]="selectedState"
+                            (change)="onStateChange()" id="floatingSelect" aria-label="Floating label select example">
+                            <!-- <option selected hidden>Please Select Industry</option> -->
+                            <option *ngFor="let state of states" value="{{state.state}}">{{state.state}}</option>
+
+                        </select>
+                        <label for="floatingSelect">State<span style="color: red;">*</span></label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="form-floating mb-3">
+                        <select class="form-select " formControlName="city" id="floatingSelect"
+                            aria-label="Floating label select example">
+                            <!-- <option selected hidden>Please Select Industry</option> -->
+                            <option *ngFor="let city of cities">{{city.city}}</option>
+
+                        </select>
+                        <label for="floatingSelect">City<span style="color: red;">*</span></label>
+                    </div>
+                </div>
+               
+
+            
+                <div class="col-12 col-md-4">
+                    <div class="form-floating">
+                        <input type="text" formControlName="pincode" class="form-control" id="floatingInput"
+                            placeholder="+91 01234567890" autocomplete="off">
+                        <label for="floatingInput">Pincode</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="address1" placeholder="Leave a comment here"
+                            id="floatingTextarea" style="height: 100px;"></textarea>
+                        <label for="floatingTextarea">Address1</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="address2" placeholder="Leave a comment here"
+                            id="floatingTextarea" style="height: 100px;"></textarea>
+                        <label for="floatingTextarea">Address2</label>
+                    </div>
+                </div>
+    
+                <div class="col-12" style="text-align: center;">
+                    <button type="submit" class="btn text-white btn-md rounded-5" id="darkblue" style="width: 25%;">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

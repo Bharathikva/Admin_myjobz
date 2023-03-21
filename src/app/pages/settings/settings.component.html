@@ -1,12 +1,18 @@
 <!-- The sidebar -->
-<div class="sidebar" id="side">
+<div class="sidebar pt-5">
+    <a (click)="dasn()" class={{das}}  routerLink="/home/settings/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-user me-2" ></i>My Profile</a>
+    <a (click)="comn()" class={{com}}  routerLink="/home/settings/category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-boxes-stacked me-2" ></i>Add Industry</a>
+    <a (click)="cann()" class={{can}} routerLink="/home/settings/location" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-location-dot me-2" ></i>Location</a>
+    <a (click)="setn()" class={{set}} routerLink="/home/settings/addsubscription" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-money-bill-wheat me-2" ></i>Edit Subscription</a>
+    <a (click)="pho()" class={{num}} routerLink="/home/settings/phone" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-phone me-2" ></i>Phone Number</a>
+    <button class="btn bg-transparent border-0 w-100 text-start" style="color: rgb(255, 0, 0);margin-left: 36px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
   
-    <a class= {{jjj}} id="logi" routerLink="/home/settings/category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-boxes-stacked me-2" style="color: #073C7E;"></i>Add Industry</a>
-    <a (click)="vada()" id="logi" routerLink="/home/settings/location" routerLinkActive="active" [routerLinkActiveOptions]="{exact:false}"><i class="fa-solid fa-location-dot me-2" style="color: #073C7E;"></i>Location</a>
-    <!-- <a routerLink="/home/settings/employmenttype" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-file-circle-plus me-2" style="color: #073C7E;"></i>Employment Type</a> -->
-    <a routerLink="/home/settings/addsubscription" id="logi" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-money-bill-wheat me-2" style="color: #073C7E;"></i>Edit Subscription</a>
-    <button class="btn bg-transparent border-0 w-100 text-start" style="color: rgb(255, 0, 0);" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
-
+       
+        <!-- main content goes here -->
+   
+  </div>
+  <div style="position: fixed;">
+    <button class="btn rounded-0 fs-3 newtoggle" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
   </div>
 
 
@@ -23,7 +29,9 @@
         </div>
     </div>
 </div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
+ 
 
-  <router-outlet></router-outlet>
-  <!-- Page content -->
  

@@ -1,41 +1,68 @@
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-<div class="container">
-  <div class="row d-flex">
-    <div class="col-12 col-md-6" id="leo">
+<!-- <div style="display: flex; justify-content: center; align-items: center; height: 100vh;"> -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm" id="mainNav" style="background-color: white;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" routerLink=""><img src="/assets\img\logo.png" width="75px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                <!-- <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li> -->
+                <li class="nav-item"><a class="nav-link me-lg-3 btn text-white" id="darkblue" href="#download">Download</a></li>
+            </ul>
+            <!-- <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                <span class="d-flex align-items-center">
+                    <i class="bi-chat-text-fill me-2"></i>
+                    <span class="small">Send Feedback</span>
+                </span>
+            </button> -->
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" id="bg">
+  <div class="container" >
+  <div class="row d-flex py-5">
+    <div class="col-12 col-md-6" id="leo" style="align-self: center;">
       <div class="p-5">
-          <div class="p-5 rounded-3" id="blue">
-              <h2 class="text-center">Welcome To <span class="fw-bolder" id="darkbluetext">Myjobz</span> </h2>
-              <p class="text-center">Login via Phone Number and OTP</p>
+          <div class=" rounded-3">
+              <h2 class="mb-3">Welcome To <span class="fw-bolder" id="darkbluetext">Myjobz</span> </h2>
+              <!-- <p class="text-center">Login via Phone Number and OTP</p> -->
               <div>
-                   <form class="row g-3 needs-validation" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                    <div class="col-12">
-                      <div class="form-floating mb-3"> 
-                      <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" type="text" formControlName="phone" maxlength="10" class="form-control w-100" id="floatingInput"  placeholder="000000000000" autocomplete="off">
-                      <label for="floatingInput">Phone Number</label>
-                      <span class="text-left text-danger" *ngIf="loginForm.controls['phone'].hasError('required') && loginForm.controls['phone'].touched" >
-                          phone number is required.
-                        </span>
-                        <div class="text-left text-danger" *ngIf="numberControl.errors?.['maxlength']">Maximum length is 10 digits</div>
-                        <div class="text-left text-danger" *ngIf="numberControl.errors?.['pattern']">Please enter only numbers</div>
-
-                        
-
-                     </div>
+                  
+                   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="col-12 mb-3">
+                      <div class="form-floating">
+                          <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="10" type="phone" formControlName="phoneNumber" class="form-control" id="floatingInput"
+                              placeholder="h" autocomplete="off">
+                          <label for="floatingInput">Phone Number: <span style="color: red;">*</span></label>
+                      </div>
                   </div>
-                  <div class="col-12">
-                    <div class="form-floating mb-3"> 
-                    <input type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" formControlName="otp" maxlength="4" class="form-control w-100" id="floatingInput" placeholder="000000000000" autocomplete="off">
-                    <label for="floatingInput">OTP</label>
-                    <span class="text-danger" *ngIf="loginForm.controls['otp'].hasError('required') && loginForm.controls['otp'].touched" >
-                        OTP is required.
-                      </span>
-                   </div>
-                </div>
-                <div>
-                  <button class="btn text-white w-100" id="darkblue" type="submit"  [disabled]="loginForm.invalid" >Sign in</button>
-                </div>
-                   </form>
-              </div>
+                    <div *ngIf="hidebutton">
+                      <button class="btn text-white" id="darkblue" type="submit" >Send OTP</button>
+                    </div>
+                 
+            
+                  <div class="col-12 mb-3">
+                      <div *ngIf="showOTPForm">
+                      
+                      <p class="text-white">Enter the OTP sent to {{ form.value.phoneNumber }}</p>
+                      <div class="mb-3">
+                        <ng-otp-input  #ngOtpInput (onInputChange)="onOtpChange($event)"  [config]="{length:4,inputClass:'dot',allowNumbersOnly:true}"></ng-otp-input>
+                      </div>
+                      <button class="btn text-white me-3" id="darkblue"  type="submit" (click)="onVerifyOTP()">Verify OTP</button>
+                      <!-- <span *ngIf="otp" class="o-t-p">Entered otp :-{{otp}}</span> -->
+                     
+                      <button class="btn text-white" type="submit" >Resend OTP</button>
+                    
+                     
+                    </div>
+               
+                  </div>
+                </form>
+              
+                 
+                  </div>
           </div>
       </div>
     </div>
@@ -47,3 +74,30 @@
   </div>
 </div>
 </div>
+
+<section class="bg-gradient-primary-to-secondary py-3" id="download">
+  <div class="container px-5">
+      <h2 class="text-center text-white font-alt mb-4">Get the app now!</h2>
+      <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+          <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge" src="/assets\img\app-store-badge.svg" alt="..." /></a>
+          <a href="#!"><img class="app-badge" src="/assets\img\Google_Play_Store_badge_FR.svg" alt="..." width="140px" /></a>
+      </div>
+  </div>
+</section>
+
+<footer class="bg-black text-center py-5">
+  <div class="container px-5">
+      <div class="text-white-50 small">
+          <div class="mb-2">&copy; Innovix 2023. All Rights Reserved.</div>
+          <a href="#!">Privacy</a>
+          <span class="mx-1">&middot;</span>
+          <a href="#!">Terms</a>
+          <span class="mx-1">&middot;</span>
+          <a href="#!">FAQ</a>
+      </div>
+  </div>
+</footer>
+
+<!-- </div> -->
+
+
