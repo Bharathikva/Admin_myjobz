@@ -57,7 +57,7 @@
                 <div class="col-12 col-md-6">
                     <div class="form-floating mb-3">
                         <select class="form-select " formControlName="state" [(ngModel)]="selectedState"
-                            (change)="onStateChange()" id="floatingSelect" aria-label="Floating label select example">
+                            (ngModelChange)="onStateChange()" id="floatingSelect" aria-label="Floating label select example">
                             <!-- <option selected hidden>Please Select Industry</option> -->
                             <option *ngFor="let state of states" value="{{state.state}}">{{state.state}}</option>
 
@@ -71,7 +71,7 @@
                         <select class="form-select " formControlName="city" id="floatingSelect"
                             aria-label="Floating label select example">
                             <!-- <option selected hidden>Please Select Industry</option> -->
-                            <option *ngFor="let city of cities">{{city.city}}</option>
+                            <option value="{{city.city}}" *ngFor="let city of cities">{{city.city}}</option>
 
                         </select>
                         <label for="floatingSelect">City<span style="color: red;">*</span></label>

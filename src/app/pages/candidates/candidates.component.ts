@@ -6,15 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./candidates.component.css']
 })
 export class CandidatesComponent {
-  jjj?:string;
+ 
+  das?: string;
+  com?: string;
+  can?: string;
 
-  jjf = false;
-  constructor(){
-    this.vada();
-  }
+
+  constructor(){}
  
   ngOnInit(): void {
-  
+    this.dasn()
   }
 
 
@@ -27,16 +28,26 @@ export class CandidatesComponent {
     newtoggle.classList.toggle('fixed');
   }
   
+  dasn() {
 
-  vada(){
-    if(this.jjf == false){
-
-      this.jjf = true;
-      this.jjj = "active";
-    }else{
-      this.jjj = "inactive";
-    }
+    this.das = "active";
+    this.com = "inactive";
+    this.can = "inactive";
    
   }
+  comn() {
+    this.das = "inactive";
+    this.com = "active";
+    this.can = "inactive";
+   
 
+
+  }
+  cann() {
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "active";
+   
+
+  }
 }

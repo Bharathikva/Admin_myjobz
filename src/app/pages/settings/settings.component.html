@@ -1,17 +1,17 @@
 <!-- The sidebar -->
-<div class="sidebar pt-5">
+<div class="sidebar pt-0 pt-md-5">
     <a (click)="dasn()" class={{das}}  routerLink="/home/settings/admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-user me-2" ></i>My Profile</a>
     <a (click)="comn()" class={{com}}  routerLink="/home/settings/category" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-boxes-stacked me-2" ></i>Add Industry</a>
     <a (click)="cann()" class={{can}} routerLink="/home/settings/location" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-location-dot me-2" ></i>Location</a>
     <a (click)="setn()" class={{set}} routerLink="/home/settings/addsubscription" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-money-bill-wheat me-2" ></i>Edit Subscription</a>
     <a (click)="pho()" class={{num}} routerLink="/home/settings/phone" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-phone me-2" ></i>Phone Number</a>
-    <button class="btn bg-transparent border-0 w-100 text-start" style="color: rgb(255, 0, 0);margin-left: 36px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
+    <button class="btn bg-transparent border-0 w-100 text-start" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</button>
   
        
         <!-- main content goes here -->
    
   </div>
-  <div style="position: fixed;">
+  <div class="toggle">
     <button class="btn rounded-0 fs-3 newtoggle" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
   </div>
 

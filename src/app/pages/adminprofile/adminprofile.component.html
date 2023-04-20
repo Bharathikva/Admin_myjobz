@@ -1,88 +1,95 @@
+<div class="mt-0 mt-md-3 rounded-3" *ngIf="adminprofile">
+    <!-- <div style="height: 100px;"></div> -->
+    <div class="container px-1 pb-5">
+        <div class="col-12 d-flex text-center justify-content-center">
 
-    <div class="mt-3 rounded-3 shadow" *ngIf="adminprofile">
-        <!-- <div style="height: 100px;"></div> -->
-        <div class="container px-1 pb-5">
-            <div class="col-12 d-flex text-center justify-content-center">
-                <div class="text-center p-3">
-                    <img class="{{d}}" src="{{apiImageUrl}}" style="width: 200px; height: 200px;" alt="'">
-    
-                    <ng-container *ngIf="expression; getEmployeeData">
+            <input type="file" (change)="onFileSelected($event)">
+    <div *ngIf="progress > 0">{{progress}}% uploaded</div>
+    <div *ngIf="imageUrl">Uploaded file: <img [src]="imageUrl"></div>
 
-                        <img src="/assets\img\default.jpeg" style="width: 200px; height: 200px;"
-                            alt="default img">
-                    </ng-container>
-                </div>
-                
+            <div class="text-center p-3">
+                <img class="{{d}}" src="{{apiImageUrl}}" style="width: 200px; height: 200px;" alt="'">
+
+                <ng-container *ngIf="expression; getEmployeeData">
+
+                    <img src="/assets\img\default.jpeg" style="width: 200px; height: 200px;" alt="default img">
+                </ng-container>
             </div>
-            <div class="row d-flex px-3 ">
-                <div class="col-12 text-center">
-                    <div>
-                        <h2 class="fw-bolder" id="darkbluetext">{{adminprofile.firstname}}</h2>
-                        <!-- <h5>{{adminprofile.role}}</h5> -->
-                    </div>
-
-                </div>
-                <div class="col-12 col-md-4"></div>
-            </div>
-            <div class="row d-flex rounded-3 shadow-sm p-3 mt-3 mx-5" id="blue">
-                <div class="col-12 p-3 mb-3 fw-bolder d-flex justify-content-between">
-                    <h4 id="darkbluetext">Basic Information</h4>
-                    <div class="mt-3"> <button routerLink="/home/settings/edit" class="btn text-white"
-                        id="darkblue">Edit profile</button></div>
-                </div>
-                <div class="row d-flex">
-                    <div class="col-12 col-md-6">
-                        <div class="fs-6 fw-bolder p-3">
-                            First Name<br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-user me-2"></i>{{adminprofile.firstname}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="fs-6 fw-bolder p-3">
-                            Phone <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-phone me-2"></i>{{adminprofile.phone}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="fs-6 fw-bolder p-3">
-                            Email <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-envelope me-2"></i>{{adminprofile.email}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="fs-6 fw-bolder p-3">
-                            Address <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i
-                                    class="fa-solid fa-id-badge me-2"></i>{{adminprofile.address1}},{{adminprofile.address2}},{{adminprofile.state}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="fs-6 fw-bolder p-3">
-                            Role <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-circle-user me-2"></i>{{adminprofile.role}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <div class="fs-6 fw-bolder p-3">
-                            Pincode <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-street-view me-2"></i>{{adminprofile.pincode}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <div class="fs-6 fw-bolder p-3">
-                            Founder <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-regular fa-building me-2"></i>{{adminprofile.founder}}</span>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 mb-3">
-                        <div class="fs-6 fw-bolder p-3">
-                            Subscription Plan <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
-                                <i class="fa-solid fa-receipt me-2"></i>{{adminprofile.plan}}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
         </div>
+        <div class="row d-flex px-3 ">
+            <div class="col-12 text-center">
+                <div>
+                    <h2 class="fw-bolder" id="darkbluetext">{{adminprofile.firstname}}</h2>
+                    <!-- <h5>{{adminprofile.role}}</h5> -->
+                </div>
+
+            </div>
+            <div class="col-12 col-md-4"></div>
+        </div>
+        <div class="row d-flex justify-content-between rounded-3 shadow-sm p-3 p-md-3 mx-0 mx-md-5" id="blue">
+
+            <div class="col-12 col-md-6 align-self-center text-center text-md-start">
+                <h4 id="darkbluetext">Basic Information</h4>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end">
+                <button routerLink="/home/settings/edit" class="btn text-white" id="darkblue">Edit profile</button>
+            </div>
+
+
+            <div class="row d-flex">
+                <div class="col-12 col-md-6">
+                    <div class="fs-6 fw-bolder p-3">
+                        First Name<br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-user me-2"></i>{{adminprofile.firstname}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="fs-6 fw-bolder p-3">
+                        Phone <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-phone me-2"></i>{{adminprofile.phone}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="fs-6 fw-bolder p-3">
+                        Email <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-envelope me-2"></i>{{adminprofile.email}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="fs-6 fw-bolder p-3">
+                        Address <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i
+                                class="fa-solid fa-id-badge me-2"></i>{{adminprofile.address1||"----"}},{{adminprofile.address2||"----"}},{{adminprofile.state||"----"}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="fs-6 fw-bolder p-3">
+                        Role <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-circle-user me-2"></i>{{adminprofile.role||"----"}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="fs-6 fw-bolder p-3">
+                        Pincode <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-street-view me-2"></i>{{adminprofile.pincode||"----"}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="fs-6 fw-bolder p-3">
+                        Founder <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-regular fa-building me-2"></i>{{adminprofile.founder||"----"}}</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="fs-6 fw-bolder p-3">
+                        Subscription Plan <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal">
+                            <i class="fa-solid fa-receipt me-2"></i>{{adminprofile.plan||"----"}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+</div>

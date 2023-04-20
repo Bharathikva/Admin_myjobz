@@ -1,18 +1,18 @@
 <!-- The sidebar -->
-<div class="sidebar pt-5">
-    <a class = {{jjj}} routerLink="/home/candidate/profileinfo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-user me-2"></i>Profile Info</a>
-    <a (click)="vada()" routerLink="/home/candidate/resume" routerLinkActive="active"><i class="fa-solid fa-file-circle-plus me-2"></i>Resume</a>
-    <a (click)="vada()" routerLink="/home/candidate/subscription" routerLinkActive="active"><i class="fa-solid fa-money-bill-wheat me-2"></i>Subscription</a>
+<div class="sidebar pt-0 pt-md-5">
+    <a (click)="dasn()" class={{das}} routerLink="/home/candidate/profileinfo" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa-solid fa-user me-2"></i>Profile Info</a>
+    <a (click)="comn()" class={{com}} routerLink="/home/candidate/resume" routerLinkActive="active"><i class="fa-solid fa-file-circle-plus me-2"></i>Resume</a>
+    <a (click)="cann()" class={{can}} routerLink="/home/candidate/subscription" routerLinkActive="active"><i class="fa-solid fa-money-bill-wheat me-2"></i>Subscription</a>
     <a routerLink="/home/candidate/appliedjobs" routerLinkActive="active"><i class="fa-solid fa-file-circle-plus me-2"></i>Applied Jobs</a>
-    <button class="btn bg-transparent border-0 w-100 text-start mx-1"  style="color: red;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash  me-2"></i>Delete User</button>
+    <button class="btn bg-transparent border-0 w-100 text-start mx-1"  style="color: red;padding-left: 41px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash  me-2"></i>Delete User</button>
   </div>
-  <div style="position: fixed;">
+  <div class="toggle">
     <button class="btn rounded-0 fs-3 newtoggle" (click)="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
   </div>
   <app-delete></app-delete>
   <div class="content">
     <router-outlet></router-outlet>
 </div>
-  <!-- Page content -->
+ 
  
   

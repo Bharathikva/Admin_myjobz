@@ -63,6 +63,9 @@ export class LoginComponent {
     );
   }
 
+  back(){
+    this.hidebutton=true;
+  }
 
   onVerifyOTP() {
     const phoneNumber = this.form.value.phoneNumber;
@@ -93,6 +96,8 @@ export class LoginComponent {
 
   ngOnInit() {
     window.sessionStorage.removeItem('token');
+    window.sessionStorage.removeItem('employerID');
+    window.sessionStorage.removeItem('employeeID');
 
   }
 

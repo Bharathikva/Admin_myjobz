@@ -6,11 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./company-nav.component.css']
 })
 export class CompanyNavComponent {
-  hhi?:string;
+ 
+  das?: string;
+  com?: string;
+  can?: string;
+  set?: string;
 
-  hhj = false;
   constructor(){
-    this.vada();
+    this.dasn()
   }
  
   toggleSidebar() {
@@ -25,17 +28,34 @@ export class CompanyNavComponent {
   }
   
   ngOnInit(): void {
-  
+
   }
 
-  vada(){
-    if(this.hhj == false){
+  dasn() {
 
-      this.hhj = true;
-      this.hhi = "active";
-    }else{
-      this.hhi = "inactive";
-    }
-   
+    this.das = "active";
+    this.com = "inactive";
+    this.can = "inactive";
+    this.set = "inactive";
+  }
+  comn() {
+    this.das = "inactive";
+    this.com = "active";
+    this.can = "inactive";
+    this.set = "inactive";
+  }
+  cann() {
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "active";
+    this.set = "inactive";
+  }
+
+  setn() {
+    this.das = "inactive";
+    this.com = "inactive";
+    this.can = "inactive";
+    this.set = "active";
+
   }
 }

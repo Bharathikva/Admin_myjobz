@@ -25,7 +25,11 @@
 
     allState:'/api/general/joblocations?type=state',
     
-    jobLocation:'/api/general/joblocations?type=city&filter='
+    jobLocation:'/api/general/joblocations?type=city&filter=',
+
+    subscription:'/api/subscription',
+
+    appliedJobs:'/api/job/employee/jobs/'
 
   }
 export default development

@@ -4,7 +4,7 @@
             <div class="row d-flex" >
                 <div class="col-12 col-md-4">
                     <div class="p-3 rounded shadow-sm h-100" id="blue">
-                        <div class="fs-3" > <a routerLink="/home/companies  "><i class="fa-solid fa-arrow-left" id="darkbluetext"></i></a> </div>
+                        <div class="fs-3" > <a routerLink="/home/companies"><i class="fa-solid fa-arrow-left" id="darkbluetext"></i></a> </div>
                         <div class="text-center p-3">
                             <img class="{{d}}" src="{{imageUrl}}" style="width: 200px; height: 200px;" alt="'">
             
@@ -15,8 +15,8 @@
                             </ng-container>
                         </div>
                         <div class="text-center">
-                            <h5 class="fw-bolder mt-3" style="color: #073C7E;">{{employerData.firstname}}</h5>
-                            <p>{{employerData.role}}</p>
+                            <h5 class="fw-bolder mt-3" style="color: #073C7E;">{{employerData.firstname || "----"}}</h5>
+                            <p>{{employerData.role || "----"}}</p>
 
                         </div>
                     </div>
@@ -33,12 +33,12 @@
                                                 style="background-color: #073C7E;">Edit Employer</a></span>
                                     </div>
                                 </div>
-                                <div class="row d-flex p-3 mt-3">
+                                <div class="row d-flex p-3 mt-0 mt-md-3">
                                     <div class="col-12 col-md-6">
                                         <h3 class="fw-bolder">Address</h3>
                                         <div class="fs-6 fw-bolder">
                                              <br> <span style="font-size: 18px;color: #073C7E;"
-                                                class="fw-normal">{{employerData.address1}} {{employerData.address2}}</span>
+                                                class="fw-normal">{{employerData.address1 || "----"}} {{employerData.address2 || "----"}}</span>
                                         </div>
                                     </div>
                                    
@@ -51,57 +51,57 @@
                             <div class="p-3 rounded shadow-sm">
                                 <div class="row d-flex justify-content-between">
                                     <div class="col align-self-center">
-                                        <span class="fs-6 fw-bolder">Basic Information</span>
+                                        <span class="fs-3 px-0 px-md-3 fw-bolder">Basic Information</span>
                                     </div>
                                   
                                 </div>
-                                <div class="row d-flex p-3 mt-3">
-                                    <div class="col-12 col-md-6">
+                                <div class="row d-flex p-0 p-md-3 ">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             Phone Number <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-phone me-2"></i>{{this.data1}}</span>
+                                                    class="fa-solid fa-phone me-2"></i>{{this.data1 || "----"}}</span>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             Founder <br> <span style="font-size: 18px;color: #073C7E;"
-                                                class="fw-normal"><i class="fa-solid fa-pen-nib me-2"></i>{{this.data1}}</span>
+                                                class="fw-normal"><i class="fa-solid fa-pen-nib me-2"></i>{{this.data1 || "----"}}</span>
                                         </div>
                                     </div>
 
                                 </div>
-                                <div class="row d-flex p-3 ">
-                                    <div class="col-12 col-md-6">
+                                <div class="row d-flex p-0 p-md-3 ">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             city <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-location-dot me-2"></i>{{employerData.city}},{{employerData.state}}</span>
+                                                    class="fa-solid fa-location-dot me-2"></i>{{employerData.city || "----"}},{{employerData.state || "----"}}</span>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             Industrial Preference <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-industry me-2"></i>{{employerData.industryname}}</span>
+                                                    class="fa-solid fa-industry me-2"></i>{{employerData.industryname || "----"}}</span>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <div class="row d-flex p-3 ">
-                                    <div class="col-12 col-md-6">
+                                <div class="row d-flex p-0 p-md-3 ">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             Email ID <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-envelope me-2"></i>{{employerData.email}}</span>
+                                                    class="fa-solid fa-envelope me-2"></i>{{employerData.email || "----"}}</span>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">
+                                    <div class="col-12 col-md-6 mt-4 mt-md-0">
                                         <div class="fs-6 fw-bolder">
                                             Website <br> <span style="font-size: 18px;color: #073C7E;"
                                                 class="fw-normal"><i
-                                                    class="fa-solid fa-earth-americas me-2"></i>{{employerData.website}}</span>
+                                                    class="fa-solid fa-earth-americas me-2"></i>{{employerData.website || "----"}}</span>
                                         </div>
                                     </div>
 

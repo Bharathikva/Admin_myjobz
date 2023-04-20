@@ -1,14 +1,18 @@
-div.content {
-    margin-left: 250px;
-    padding: 1px 16px;
-  
-  }
-  
+.table {
+  border-collapse: separate;
+  border-spacing:0 10px;
+}
+
+tr:hover{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+tr td{
+  cursor: pointer;
+}
+
+
   @media screen and (max-width: 768px) {
-    div.content {
-    margin-left: 0px;
-    padding: 1px 16px;
   
-  }
 }  
 

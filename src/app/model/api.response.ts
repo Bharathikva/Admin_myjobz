@@ -1,4 +1,8 @@
 export class ApiResponse {
+  id: any;
+  pop(): any {
+    throw new Error('Method not implemented.');
+  }
   // status!: number;
   message!: number;
   result: any;
@@ -32,5 +36,7 @@ export class ApiResponse {
   Data:any;
   document: any;
   image: any;
-
+  plan: any;
+  companyid: any;
+  
 }

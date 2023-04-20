@@ -14,9 +14,9 @@ export class ApiService {
   constructor(private http: HttpClient, private router: Router) { }
 
 
-//development
+  //development
   baseurl = development.baseUrl;
-  
+
   baseurl2 = development.baseUrl2;
 
   sendOTP(phoneNumber: string) {
@@ -31,14 +31,11 @@ export class ApiService {
     return this.http.patch(this.baseurl + development.changeNumber, { phone: phoneNumber, otp: otp });
   }
 
-
-
   login(loginPayload: any): Observable<any> {
     return this.http.post<any>(this.baseurl + development.login, loginPayload)
   };
 
   //CompaniesList Api
-
 
   getCompanies(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseurl + development.getCompanies);
@@ -48,50 +45,56 @@ export class ApiService {
     return this.http.get<ApiResponse>(this.baseurl + development.getCandidates);
   };
 
-
   getIndustry(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseurl + development.getIndustry)
   };
 
-
   getcategorylist(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.baseurl +development.getcategorylist);
+    return this.http.get<ApiResponse>(this.baseurl + development.getcategorylist);
   };
 
-  mydetail(): Observable<ApiResponse>{
+  mydetail(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseurl + development.mydetail);
   }
 
-  getEmployer():Observable<ApiResponse>{
-    return this.http.get<ApiResponse>(this.baseurl + development.getUser+window.sessionStorage.getItem('employerID'));
+  getEmployer(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.getUser + window.sessionStorage.getItem('employerID'));
   }
 
-  getEmployee():Observable<ApiResponse>{
-    return this.http.get<ApiResponse>(this.baseurl + development.getUser+window.sessionStorage.getItem('employeeID'));
+  getEmployee(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.getUser + window.sessionStorage.getItem('employeeID'));
   }
 
-  getState():Observable<ApiResponse>{
-    return this.http.get<ApiResponse>(this.baseurl+development.allState);
+  getAppliedJobs(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.appliedJobs + window.sessionStorage.getItem('employeeID'))
   }
 
-  getLocation():Observable<ApiResponse>{
-    return this.http.get<ApiResponse>(this.baseurl+development.jobLocation+window.sessionStorage.getItem('state'));
+  getState(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.allState);
   }
 
-  getLocation2(state:any):Observable<ApiResponse>{
-    return this.http.get<ApiResponse>(this.baseurl+development.jobLocation+state);
+  getLocation(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.jobLocation + window.sessionStorage.getItem('state'));
   }
 
-  updateMydetail(user:any):Observable<ApiResponse>{
-    return this.http.patch<ApiResponse>(this.baseurl+development.mydetail,user)
+  getLocation2(state: any): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.jobLocation + state);
   }
 
-  updateEmployer(employer:any):Observable<ApiResponse>{
-    return this.http.patch<ApiResponse>(this.baseurl + development.mydetail +'?id='+window.sessionStorage.getItem('employerID'),employer);
+  updateMydetail(user: any): Observable<ApiResponse> {
+    return this.http.patch<ApiResponse>(this.baseurl + development.mydetail, user)
   }
 
-  updateEmployee(employee:any):Observable<ApiResponse>{
-    return this.http.patch<ApiResponse>(this.baseurl + development.mydetail +'?id='+window.sessionStorage.getItem('employeeID'),employee);
+  updateEmployer(employer: any): Observable<ApiResponse> {
+    return this.http.patch<ApiResponse>(this.baseurl + development.mydetail + '?id=' + window.sessionStorage.getItem('employerID'), employer);
+  }
+
+  updateEmployee(employee: any): Observable<ApiResponse> {
+    return this.http.patch<ApiResponse>(this.baseurl + development.mydetail + '?id=' + window.sessionStorage.getItem('employeeID'), employee);
+  }
+
+  emoployeeSubscription(): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.baseurl + development.subscription)
   }
 
 }

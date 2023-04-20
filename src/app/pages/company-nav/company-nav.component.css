@@ -94,27 +94,93 @@ a a:focus {
 
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    border-radius: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+  .sidebar {
+    /* padding: 30px 0px 30px 30px; */
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #073C7E;
+    position: fixed;
+    height: 250px;
+    overflow: auto;
+    color: white;
+    transition: height 1s;
+  
+  }
+
+
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+.content {
+  margin-top: 0px;
+  margin-left: 0px;
+  padding: 1px 16px;
+  transition: margin-top 1s;
+
+}
+
+.content.close {
+  margin-top: 0px;
+  margin-left: 0px;
+  padding: 1px 16px;
+
+}
+
+  .sidebar.open {
+    height: 0px;
+    width: 0px;
+    /* show the sidebar by moving it into view */
+    padding: 0px 0px 0px 0px;
+  }
+  
+  .sidebar button{
+    color: rgb(255, 0, 0);margin-left: 0px;
+    text-align-last: center;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
-
+    margin-left: 0px;
   }
 
+  .toggle{
+    text-align: end;
+    position: relative;
+  }
+
+  .newtoggle {
+    position: static;
+    margin-left: 0px;
+    color: #003F7F;
+    transition: margin-left 1s;
+  }
+  
+  .newtoggle.fixed{
+    position: static;
+    margin-left: 0px;
+    color: #003F7F;
+  }
   .sidebar a {
-    float: left;
-  }
-
-  div.content {
-    margin-left: 0;
+    text-align: center;
+    float: none;
   }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
+  
 }

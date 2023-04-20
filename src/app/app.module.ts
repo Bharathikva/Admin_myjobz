@@ -57,9 +57,9 @@ import { EmployersubscriptionComponent } from './pages/employersubscription/empl
 import { EditadminprofileComponent } from './pages/editadminprofile/editadminprofile.component';
 import { SafePipe } from './safe.pipe';
 import { ChangePhoneComponent } from './pages/change-phone/change-phone.component';
-
-
-
+import * as AWS from 'aws-sdk';
+import { S3Service } from './core/S3.service';
+// import { AwsConfig } from './aws-config';
 
 
 
@@ -116,11 +116,11 @@ import { ChangePhoneComponent } from './pages/change-phone/change-phone.componen
     NgxOtpInputModule,
     NgOtpInputModule,
   ],
-  providers: [AuthService,ApiService, {
+  providers: [S3Service,AuthService,ApiService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

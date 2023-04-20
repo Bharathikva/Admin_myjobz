@@ -1,4 +1,4 @@
-<div class="px-4">
+<div class="px-0 px-md-4">
 
     <div class="row mt-2">
         <div class="col-12">
@@ -47,46 +47,46 @@
                                         style="background-color: #073C7E;">Edit Profile</a></span>
                             </div>
                         </div>
-                        <div class="row d-flex p-3 mt-3">
-                            <div class="col-12 col-md-4">
+                        <div class="row d-flex p-md-3 mt-4 mt-md-2">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     Mail Address <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i
-                                            class="fa-solid fa-briefcase me-2"></i>{{getEmployeeData.email}}</span>
+                                            class="fa-solid fa-briefcase me-2"></i>{{getEmployeeData.email || "----"}}</span>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     City <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i
-                                            class="fa-solid fa-location-dot me-2"></i>{{getEmployeeData.city}}</span>
+                                            class="fa-solid fa-location-dot me-2"></i>{{getEmployeeData.city || "----"}}</span>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     Date Of Birth <br> <span style="font-size: 18px;color: #073C7E;"
                                         class="fw-normal"><i
-                                            class="fa-solid fa-calendar-days me-2"></i>{{getEmployeeData.dob}}</span>
+                                            class="fa-solid fa-calendar-days me-2"></i>{{getEmployeeData.dob || "----"}}</span>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="row d-flex p-3 ">
-                            <div class="col-12 col-md-4">
+                        <div class="row d-flex p-md-3 ">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     Contact No <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i
-                                            class="fa-solid fa-phone me-2"></i>{{getEmployeeData.phone}}</span>
+                                            class="fa-solid fa-phone me-2"></i>{{getEmployeeData.phone || "----"}}</span>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     Gender <br> <span style="font-size: 18px;color: #073C7E;" class="fw-normal"><i
-                                            class="fa-solid fa-person-digging me-2"></i>{{gender}}</span>
+                                            class="fa-solid fa-person-digging me-2"></i>{{gender || "----"}}</span>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4">
+                            <div class="col-12 col-md-4 mb-4 mb-md-0">
                                 <div class="fs-6 fw-bolder">
                                     Industrial Preference <br> <span style="font-size: 18px;color: #073C7E;"
                                         class="fw-normal"><i
-                                            class="fa-solid fa-car me-2"></i>{{getEmployeeData.industryname}}</span>
+                                            class="fa-solid fa-car me-2"></i>{{getEmployeeData.industryname || "----"}}</span>
                                 </div>
                             </div>
 
@@ -105,9 +105,9 @@
                         <div class="row d-flex justify-content-between">
                             <div class="col">
                                 <div>
-                                    <span class="fs-5 fw-bolder" id="darkbluetext">{{education.institute}} <span
-                                            class="fs-6 fw-normal">({{education.from}} <span class="fw-bolder" id="darkbluetext">TO</span> {{education.to}})</span> </span> <br>
-                                    <p>{{education.degree}}</p>
+                                    <span class="fs-5 fw-bolder" id="darkbluetext">{{education.institute || "----"}} <span
+                                            class="fs-6 fw-normal">({{education.from || "----"}} <span class="fw-bolder" id="darkbluetext">TO</span> {{education.to ||"----"}})</span> </span> <br>
+                                    <p>{{education.degree ||"----"}}</p>
                                 </div>
                             </div>
                         </div>
@@ -122,9 +122,9 @@
                         <div class="row d-flex justify-content-between">
                             <div class="col">
                                 <div>
-                                    <span class="fs-5 fw-bolder" id="darkbluetext">{{experience.company}} <span
-                                            class="fs-6 fw-normal">({{experience.from}} <span class="fw-bolder" id="darkbluetext">TO</span> {{experience.to}})</span> </span> <br>
-                                    <p>{{experience.job}}</p>
+                                    <span class="fs-5 fw-bolder" id="darkbluetext">{{experience.company || "----"}} <span
+                                            class="fs-6 fw-normal">({{experience.from ||"----"}} <span class="fw-bolder" id="darkbluetext">TO</span> {{experience.to ||"----"}})</span> </span> <br>
+                                    <p>{{experience.job || "----"}}</p>
                                 </div>
                             </div>
                         </div>

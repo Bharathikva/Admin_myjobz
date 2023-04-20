@@ -1,17 +1,27 @@
-<div class="p-5">
-  <div class="d-flex justify-content-between align-items-center">
-    <h2 class="fw-bolder" style="color: #003F7F;">Employer</h2>
-    <div class="p-3 rounded-3 shadow-sm" id="blue">
-     <input class="me-3 p-1" type="text" [(ngModel)]="searchText" placeholder="Search Company..." (keyup)="filterData()" />
-     <a routerLink="/home/addemployer" class="btn text-white align-self-center" id="darkblue"><i
-      class="fa-solid fa-circle-plus me-2"></i>Add Employer</a>
+<div class="p-2 p-md-5">
+  <div class="row d-flex justify-content-between align-items-center">
+    <div class="col-12 col-md-3 p-3 p-md-0">
+      <h2 class="fw-bolder" style="color: #003F7F;">Employer</h2>
+    </div>
+    <div class="col-12 col-md-3 p-3 rounded-3 shadow-sm text-md-center" id="blue">
+      <div class="row d-flex justify-content-between align-items-center">
+        <div class="col-12 col-md-6">
+          <input class="w-100 p-1" type="text" [(ngModel)]="searchText" placeholder="Search Company..." (keyup)="filterData()" />
+        </div>
+        <div class="col-12 col-md-6">
+          <a routerLink="/home/addemployer" class="btn w-100 w-md-50 text-white align-self-center mt-3 mt-md-0" id="darkblue"><i
+            class="fa-solid fa-circle-plus me-2"></i>Add Employer</a>
+        </div>
+      </div>
+     
+    
     </div>
  
   </div>
   
 
-  
-  <table id="example" class="table table-borderless mt-3" *ngIf="dataLoaded">
+  <div style="overflow-x:auto;">
+     <table id="example" class="table table-borderless mt-3" *ngIf="dataLoaded">
     <!-- <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%"> -->
 
     <thead>
@@ -37,7 +47,9 @@
     </tbody>
   </table>
 
-  <div class="text-end">
+  </div>
+ 
+  <div class="text-center text-md-end">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 

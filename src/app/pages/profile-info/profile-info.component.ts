@@ -23,9 +23,7 @@ export class ProfileInfoComponent {
   d:any
 
   
-  constructor(private http: HttpClient, private api: ApiService, private route: Router) {
-
-  }
+  constructor(private http: HttpClient, private api: ApiService, private route: Router) {}
 
 
   ngOnInit() {
@@ -35,7 +33,7 @@ export class ProfileInfoComponent {
         this.getEmployeeData = data;
         this.imageUrl = data.image.toString();
         console.log(this.imageUrl);
-
+    
        this.experience = (this.getEmployeeData.experience).pop()
         console.log(this.experience);
        

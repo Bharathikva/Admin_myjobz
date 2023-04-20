@@ -11,7 +11,9 @@ import { ApiService } from 'src/app/core/api.service';
 export class CompanyDocumentComponent {
 
   pdfview=""
-
+  display:any;
+  expression:any;
+  d:any;
 
   constructor(private http: HttpClient, private api: ApiService, private route: Router) { }
 
@@ -23,7 +25,28 @@ export class CompanyDocumentComponent {
         this.pdfview = data.document;
         console.log(this.pdfview);
 
+        if(this.pdfview){
+          return this.display=true;
+        }else{
+          return this.display=false;
+        }
+
       })
+
+
   }
+
+ 
+
+  // if (pdfview = 0) {
+  //   console.log('poiuyrewwqetyu');
+  //   this.expression = true;
+  //   this.d="d-none"
+  //   return true
+  // }{
+  //   console.log('qwerttyuiopp');
+   
+  //   return
+  // }
 
 }
